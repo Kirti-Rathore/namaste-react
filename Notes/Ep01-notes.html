@@ -1,0 +1,91 @@
+Theory Section for Episode-01 - Inception
+
+1. What's Emmet?
+Ans - Emmet is VSCode feature which is used to write code from abbreviations and snippets. Example - HTML:5 will write the basic code structure of html 5.  
+
+2. Difference between Library and Framework.
+Ans: Library :
+    - A Library is a collection of pre-written code or functions that can be reused in different projects.
+    - It provides specific functionality or features that you can call upon in your code when needed.
+    - You have more control over your code and you can choose which parts of the library to use.
+    - libraries are like tools you can use to perform specific tasks within your code.
+
+    Framework :
+    - A framework is a pre-established structure or set of rules that dictate overall architecture and flow of your application.
+    - Developers need to follow the framework's design principles.
+    - Frameworks are like blueprints that define the overall structure and flow of your application.
+
+3. What is CDN? Why do we use it?
+Ans: CDN ( Content Delivery Networks ) are the links/website where React has been hosted. 
+We use CND links 
+1. to get React into our project. 
+2. We include CDN links into body tag with script tag then our project is ready to use React. 
+3. Browser will understand the React code.
+4. We use BOTH React and ReactDOM. These are suitable only for development, not for production.
+5. We also recommend to verify that the CDN you are using sets the Access-Control-Allow-Origin: * HTTP header. This enables a better error-handling.
+
+
+4.  Why React is known as React?
+Ans - React is the Javascript Library for building UI, is known as React because it revolves around the concept of reactive or responsive UI.
+- When data changes, React automatically re-renders the affected parts of the UI to keep it in sync with the data.
+- React reacts to changes in data and updates the UI accordingly.
+
+5. What is crossorigin in the script tag?
+Ans- The crossorigin attribute, valid on the <audio>, <img>, <link>, script and <video> elements.
+    - The HTML script crossorigin Attribute is used for loading an external script into their domain from a third party server or another domain with the support of HTTP CORS Request. 
+    - This attribute is used to protect sensitive information from the third party/another domain when fetching out the results.
+    -  Cross-Origin Resource Sharing(CORS) is a tool/mechanism that allows web pages requesting for resources from another domain that is outside of their own domain. It is also used for managing cross-origin requests which is a request for a resource from an outside domain.
+
+    Syntax - <script crossorigin="anonymous "> </script>
+
+    -  Attribute values-
+    1. anonymous -  It has a default value. It defines a CORS request will be sent without passing the credentials information.
+    2. use-credentials: A cross-origin request will be sent with credentials, cookies, and certificate.
+
+    Note: This attribute is only valid for use if we try to fetch the resources from the third party domain. 
+
+6. Difference between React and React-DOM?
+    -  React library is responsible for creating views and ReactDOM library is responsible to actually render UI in the browser. 
+    - Once you’ve created the React element. Then you want to see it in the Browser. 
+    But Browser doesn’t understand the React element. ReactDOM is the middleman that renders the React element in the browser. 
+    - The react package contains React.createElement, React.createClass and React.Component, React.PropTypes, React.Children, and the other helpers related to elements and component classes.
+    - The react-dom package contains ReactDOM.render, ReactDOM.unmountComponentAtNode, and ReactDOM.findDOMNode, and in react-dom/server we have server-side rendering support with ReactDOMServer.renderToString and ReactDOMServer.renderToStaticMarkup.
+
+7. What is the difference between react.development.js and react.production.js files via CDN?
+Ans: By default, React.js builds your project in development mode, which includes features like detailed error messages and debugging tools. However, when you’re ready to deploy your application, it’s important to build it in production mode to benefit from optimized performance and reduced bundle size.
+
+react.development.js: 
+- In development mode, we can enable and utilize React developer tools, devtools profiler, debugging environment attached with source code.
+- More developer friendly, readable, will take more size.
+- It contains additional code, comments, and debugging information that aids in development and troubleshooting
+
+react.production.js file: 
+- Compression and minification of Javascript and other resources happens to reduce size of the code.
+- Performance will be much faster in production mode when compared to development mode.
+- The production build creates minified bundles, lighter-weight source maps, and optimized assets. This improves the load time.
+create the production build of the app
+- npm run build
+- This will create a build directory with production build of the app. Your JavaScript and CSS files will be inside the build/static directory. A number of .js files are generated and placed inside the build/static/js directory. These are called chunks.
+
+8. What are async and defer in Javascript? 
+Ans: 
+
+Normal scripts parsing - the HTML parsing is paused by the browser when it encounters the script tag and it starts to download the JavaScript file first. The HTML elements script tag will not be executed until the browser is done with downloading the script and executing it. The browser waits till the script gets downloaded, and executed, and after this, it processes the rest of the page. This increases the load time of the page and restricts the user to navigate through the website.
+
+HTML parsing Async attribute: scripts fetched from network parallelly with HTML parsing, once it's loaded, brower execute the scripts and starts the html parsing. 
+- When we use the async attribute the script is downloaded asynchronously with the rest of the page without pausing the HTML parsing and the contents of the page are processed and displayed. Once the script is downloaded, the HTML parsing will be paused and the script’s execution will happen. Once the execution is done, HTML parsing will then resume. The page and other scripts don’t wait for async scripts and async scripts also don’t wait for them. 
+- It is great for independent scripts and externally located scripts
+
+Async Syntax - <script async src = "script.js"></script>
+
+HTML attribute with Defer attribute - scripts get downloaded from network with html parsing, and executed once HTML parsing completed. Basically we should use if we have multiple scripts so it maintains the order of scripts.
+
+Defer Syntax - <script defer src = "script.js"></script>
+
+Difference between async and defer -
+1. Asynchronous blocks the parsing of the page. Deferred never blocks the page.
+2. Asynchronous scripts don’t wait for each other. So if a smaller script is second in the order, it will be loaded before the previous longer one.
+Deferred scripts maintain their relative order which means the first script will be loaded first while all others below it will have to wait.
+3. The execution of scripts begins by pause parsing. However, the execution of scripts begins only after parsing is completely finished but before the document’s DOMContentLoadedevent.
+
+ 

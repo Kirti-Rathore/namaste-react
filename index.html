@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+
+<body>
+    <!-- 1. Hello React By HTML -->
+    <!-- <h1> Hello Namaste React!!!!</h1> -->
+
+    <h1> Top of React Div </h1>
+    <!-- React will apply only to this root div -->
+    <div id="root"></div> 
+    <h1> Below of React Div </h1>
+
+    <!-- 2. By Javascript
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello React from Javascript!";
+
+        const root1 = document.getElementById("root");
+        root1.appendChild(heading);
+    </script> -->
+    
+    <!-- 3. By React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./App.js">
+       
+    </script>
+</body>
+
+</html>
